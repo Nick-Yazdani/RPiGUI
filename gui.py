@@ -24,6 +24,11 @@ window.title("LED control panel")
 
 window.geometry('350x200')
 
+def onExit():
+	window.destroy()
+
+exitButton = Button(window, text="Exit", command=onExit)
+
 def onRed():
 	GPIO.output(blue_code, GPIO.LOW)
 	GPIO.output(yellow_code, GPIO.LOW)
@@ -51,6 +56,9 @@ red.grid(column=0, row=0)
 yellow.grid(column=1, row=0)
 
 blue.grid(column=2, row=0)
+
+exitButton.grid(column=3, row=0)
+
 
 
 window.mainloop()
